@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="product.css">
+
+</head>
+    <body>
+        <nav>
+            <div class="logo">
+              <a href="#">Buyer</a>
+            </div>
+            <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <!-- crat icon font awesome-->
+            <div class="cart">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+          </nav>
+        
+        <div class="cart-all">
+            <div class="productHeading"  >
+                <h4> Product Details</h4>
+        
+            </div>
+            <div class="products-colls">
+                <div class="card-shoping"> 
+                    <div class="cards">
+                        <div class="flex-items">
+                            <div class="card-image">
+                                <img src="img/15.png" class="w-100" alt="">
+                                <div class="img-desc">
+                                    <h5>Bag Item </h5>
+                                    <p>The bag is ....</p>
+                                </div>    
+                            </div>
+                            <!--  -->
+                           
+                            <!--  -->
+                            <div class="detelis-card">
+                                <div class=" cart-flex ">
+                                   
+                                  
+                                    <div class="span-number">
+                                        <p>+</p>
+                                        <p>2</p>
+                                        <p>-</p>
+                                    </div>
+                                    <h5 class="h5" >150 <span>$</span></h5>
+                                    <i class="fas fa-trash-alt" style="margin-left: 15px;"></i>
+                                </div>
+                            </div>
+    <!--  -->
+                        </div>
+                           
+                        
+                           
+                    </div>
+                    <!-- --------------cart2 -->
+                    <div class="cards">
+                        <div class="flex-items">
+    
+                            <div class="card-image">
+                                <img src="img/15.png" class="w-100" alt="">
+                                <div class="img-desc">
+                                    <h5>Bag Item </h5>
+                                    <p>The bag is ....</p>
+                                </div>
+                                   
+                              
+                            </div>
+                            <!--  -->
+                            <!-- <div class="mid-card"> -->
+                               
+                            <!-- </div> -->
+                            <!--  -->
+                            <div class="detelis-card">
+                                <div class=" cart-flex ">
+                                   
+                                  
+                                    <div class="span-number">
+                                        <p>+</p>
+                                        <p>2</p>
+                                        <p>-</p>
+                                    </div>
+                                    <h5 class="h5" >150 <span>$</span></h5>
+                                    <i class="fas fa-trash-alt" style="margin-left: 15px;"></i>
+                                </div>
+                            </div>
+    <!--  -->
+                        </div>
+                           
+                        
+                           
+                    </div>
+                    <!-- --------------------------cart3 -->
+                    <div class="cards">
+                        <div class="flex-items">
+    
+                            <div class="card-image">
+                                <img src="img/15.png" class="w-100" alt="">
+                                <div class="img-desc">
+                                    <h5>Bag Item </h5>
+                                    <p>The bag is ....</p>
+                                </div>
+                                   
+                              
+                            </div>
+                            <!--  -->
+                            <!-- <div class="mid-card"> -->
+                               
+                            <!-- </div> -->
+                            <!--  -->
+                            <div class="detelis-card">
+                                <div class=" cart-flex ">
+                                   
+                                  
+                                    <div class="span-number">
+                                        <p>+</p>
+                                        <p>2</p>
+                                        <p>-</p>
+                                    </div>
+                                    <h5 class="h5" >150 <span>$</span></h5>
+                                    <i class="fas fa-trash-alt" style="margin-left: 15px;"></i>
+                                </div>
+                            </div>
+    <!--  -->
+                        </div>
+                           
+                        
+                           
+                    </div>
+                </div>
+           
+           
+                <!-- -----------------------------------total -->
+                <div class="total-sec">
+   <div class="heading-Flex">
+                    <h5 class="h51">الاجمالي</h5>
+                    <h5 class="h5">150 <span>ريال</span></h5>
+                </div>
+                <button class="but-product">
+                    <a href="" class="btn">الدفع</a>
+                    </button>
+                
+                </div>
+            </div>
+             
+      
+        </div>
+        <script>
+            const burger = document.querySelector(".burger");
+            const navLinks = document.querySelector(".nav-links");
+      
+            burger.addEventListener("click", () => {
+              navLinks.classList.toggle("nav-active");
+              burger.classList.toggle("toggle");
+            });
+          </script>
+    </body>
+</html>
