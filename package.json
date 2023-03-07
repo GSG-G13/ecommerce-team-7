@@ -1,0 +1,22 @@
+{
+  "name": "ecommerce-team-7",
+  "version": "1.0.0",
+  "description": "eCommerce Dom Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G13/ecommerce-team-7.git"
+  },
+  "author": "Ahmed,Momen and Heba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G13/ecommerce-team-7/issues"
+  },
+  "homepage": "https://github.com/GSG-G13/ecommerce-team-7#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
