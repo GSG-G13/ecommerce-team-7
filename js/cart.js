@@ -1,15 +1,20 @@
 let btnPlus = document.querySelectorAll(".btn_plus");
 let btnMinus = document.querySelectorAll(".btn_minus");
 let count = document.querySelectorAll(".count");
+const fixedPrice = document.querySelectorAll(".fixed_price");
 let Price = document.querySelectorAll(".price");
 const cancel = document.querySelectorAll(".cancel");
 const listProduct = document.querySelectorAll(".list-product");
+const subtotal = document.querySelector(".total");
 
 
 // loop on btn plus
 btnPlus.forEach((ele, index) => {
-  let priceNumber = parseInt(Price[index].textContent);
+  let priceNumber = parseInt(fixedPrice[index].textContent);
   let counter = parseInt(count[index].textContent);
+  // add total price to subtotal
+  subtotal.textContent = parseInt(subtotal.textContent)+counter*priceNumber;
+  
 
   ele.addEventListener("click", (e) => {
     counter++;
@@ -17,6 +22,7 @@ btnPlus.forEach((ele, index) => {
     let total = counter * priceNumber;
     // add total price to subtotal
     Price[index].textContent = total;
+    subtotal.textContent = parseInt(subtotal.textContent)+parseInt(fixedPrice[index].textContent);
     // let arr = JSON.stringify(total);
     // localStorage.setItem("totalPrice", total);
   });
@@ -24,12 +30,14 @@ btnPlus.forEach((ele, index) => {
 
   // loop on btn minus
   btnMinus[index].addEventListener("click", (e) => {
-    if (counter > 0) {
+    if (counter > 1) {
       counter--;
       count[index].textContent = counter;
       let total = counter * priceNumber;
     //   // add total price to subtotal
       Price[index].textContent = total;
+      subtotal.textContent = parseInt(subtotal.textContent)-total;
+
     //   //   localStorage.setItem("totalPrice", total);
     }
   });
