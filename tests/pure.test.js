@@ -1,4 +1,4 @@
-const {} = require("../js/pure.js");
+const {removeCartItem} = require("../js/pure.js");
 
 const arr = [
   {
@@ -29,7 +29,7 @@ const arr = [
 
 describe("eCommerce tests", () => {
   test("should remove item 2", () => {
-    const expected = removeItem(arr, 2);
+    const expected = removeCartItem(arr, 2);
     const actual = [
       {
         id: 1,
