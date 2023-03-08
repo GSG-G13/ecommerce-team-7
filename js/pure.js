@@ -9,7 +9,3 @@ const removeCartItem = (cart, id) => {
 };
 
 module.exports = { removeCartItem };
-<<<<<<< HEAD
-
-=======
->>>>>>> main
