@@ -11,6 +11,7 @@ if(burger)
     burger.classList.toggle("toggle");
   });
 
+
 }
 const productsHolder = document.querySelector(".product-grid");
 const categoiesHolder = document.querySelector(".category-bar");
