@@ -321,6 +321,7 @@ font-size: 20px;
     background-color: #fff !important;
     box-shadow: 1px 2px 3px #efefef , -1px -2px 3px #efefef;
     border-radius: 15px;
+    margin-bottom: 15px;
     
   }
   .card-shoping .cards img{
@@ -367,12 +368,24 @@ align-items: center;
     width: 30%;
    padding: 20px 20px 0 20px;
     min-height: 100px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     background-color: #fff !important;
     box-shadow: 1px 2px 3px #efefef , -1px -2px 3px #efefef;
     border-radius: 15px;
-  
+  padding-bottom: 10px;
+  margin-top: 30px;
   }
   a{
     text-decoration: none;
+  }
+  #delIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+  }
+  .button-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

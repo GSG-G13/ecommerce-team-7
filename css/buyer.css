@@ -380,3 +380,22 @@ a
 {
   text-decoration: none;
 }
+
+nav a i {
+  position: relative;
+}
+nav a i::after {
+  content: "0";
+  position: absolute;
+  top: -0.85rem;
+  right: -0.85rem;
+  background: #ba5d2c;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: wheat;
+  font-weight: bold;
+  font-size: 10px;
+}
