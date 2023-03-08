@@ -9,6 +9,12 @@ html {
   /* margin: 0;
     padding: 0; */
 }
+
+:root {
+  --main-color: #ff5200;
+  --second-color: #eee;
+}
+
 body {
   width: 100%;
   margin: 0;
@@ -264,4 +270,122 @@ nav {
 .css-button-rounded--red:hover {
   background: #fff;
   color: #d90429;
+}
+
+/* popub styles */
+.add-popup {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ecf2ff;
+  padding: 20px;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  padding-top: 20px;
+  width: 80%;
+}
+
+.form #category {
+  width: 40%;
+}
+.form .row input {
+  width: 40%;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  background-color: var(--second-color);
+  background-color: #ffffff;
+}
+
+.form .row button {
+  width: 40%;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #eee;
+  background-color: #3e54ac;
+  border-radius: 15px;
+  padding: 10px 15px;
+  transition: ease 0.3s;
+  -webkit-transition: ease 0.3s;
+  -moz-transition: ease 0.3s;
+  -ms-transition: ease 0.3s;
+  -o-transition: ease 0.3s;
+}
+.form .row button:hover {
+  color: #eee;
+  background-color: #655dbb;
+}
+#dashboard {
+  background-color: transparent;
+  color: #000;
+  outline: 1px solid #000;
+}
+
+#dashboard:hover {
+  background-color: #3e54ac;
+  color: #eee;
+  outline-color: #3e54ac;
+}
+select {
+  text-align: center;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .add-popup {
+    width: 90%;
+    /* font-size: 16px; */
+  }
+  .form {
+    font-size: 18px;
+  }
+  .form .row input {
+    width: 50%;
+    font-size: 14px;
+  }
+  .form #category {
+    width: 50%;
+    font-size: 14px;
+  }
+
+  .form .row button,
+  #dashboard {
+    font-size: 14px;
+    width: 47%;
+  }
 }
