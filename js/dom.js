@@ -19,13 +19,18 @@ const categoiesHolder = document.querySelector(".category-bar");
 
 
 //popup
-addBtnProduct.addEventListener("click", () => {
-  popup.style.display = "flex";
-});
+if(addBtnProduct || closeBtn)
+{
+  addBtnProduct.addEventListener("click", () => {
+    popup.style.display = "flex";
+  });
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+  
+}
 
-closeBtn.addEventListener("click", () => {
-  popup.style.display = "none";
-});
+
 
 
 
