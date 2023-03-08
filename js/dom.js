@@ -4,38 +4,28 @@ const shop_btn = document.getElementById("shop-btn");
 const popup = document.getElementsByClassName("add-popup")[0];
 const addBtnProduct = document.getElementsByClassName("add-product")[0];
 const closeBtn = document.getElementById("dashboard");
-if(burger)
-{
+const searchInput = document.querySelector(".search-bar input");
+
+if (burger) {
   burger.addEventListener("click", () => {
     navLinks.classList.toggle("nav-active");
     burger.classList.toggle("toggle");
   });
-
-
 }
-const productsHolder = document.querySelector(".product-grid");
+const productsHolder = document.getElementById("productsHolder");
 const categoiesHolder = document.querySelector(".category-bar");
 
-
-
-
 //popup
-if(addBtnProduct || closeBtn)
-{
+if (addBtnProduct || closeBtn) {
   addBtnProduct.addEventListener("click", () => {
     popup.style.display = "flex";
   });
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
-  
 }
 
-
-
-
-
-// 
+//
 if (shop_btn) {
   shop_btn.addEventListener("click", () => {
     document.getElementById("products").scrollIntoView();
@@ -59,16 +49,15 @@ const productDisplay = function () {
       <img src="${product.image}" alt="Product 1" />
     </div>
     <div class="product-info">
-      <h3 class="product-name">Product 1</h3>
+      <h3 class="product-name">${product.title}</h3>
       <p class="product-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        ${product.description}
       </p>
-      <p class="product-price">$9.99</p>
+      <p class="product-price">$${product.price}</p>
     </div>
     <div class="product-actions">
-      <a href="#" class="btn btn-primary">View</a>
-      <a href="#" class="btn btn-secondary">Add to cart</a>
+      <a onclick="viewProduct(${product.id})" class="btn btn-primary">View</a>
+      <a onclick="AddProduct(${product.id})" class="btn btn-secondary">Add to cart</a>
     </div>
   </div>`;
   });
@@ -87,16 +76,15 @@ categoiesHolder.childNodes.forEach((el) => {
           <img src="${product.image}" alt="Product 1" />
         </div>
         <div class="product-info">
-          <h3 class="product-name">Product 1</h3>
+          <h3 class="product-name">${product.title}</h3>
           <p class="product-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            ${product.description}
           </p>
-          <p class="product-price">$9.99</p>
+          <p class="product-price">$${product.price}</p>
         </div>
         <div class="product-actions">
-          <a href="#" class="btn btn-primary">View</a>
-          <a href="#" class="btn btn-secondary">Add to cart</a>
+          <a onclick="viewProduct(${product.id})" class="btn btn-primary">View</a>
+          <a onclick="AddProduct(${product.id})" class="btn btn-secondary">Add to cart</a>
         </div>
       </div>`;
       });
@@ -108,16 +96,15 @@ categoiesHolder.childNodes.forEach((el) => {
             <img src="${product.image}" alt="Product 1" />
           </div>
           <div class="product-info">
-            <h3 class="product-name">Product 1</h3>
+            <h3 class="product-name">${product.title}</h3>
             <p class="product-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              ${product.description}
             </p>
-            <p class="product-price">$9.99</p>
+            <p class="product-price">$${product.price}</p>
           </div>
           <div class="product-actions">
-            <a href="#" class="btn btn-primary">View</a>
-            <a href="#" class="btn btn-secondary">Add to cart</a>
+            <a onclick="viewProduct(${product.id})" class="btn btn-primary">View</a>
+            <a onclick="AddProduct(${product.id})" class="btn btn-secondary">Add to cart</a>
           </div>
         </div>`;
         }
@@ -125,3 +112,54 @@ categoiesHolder.childNodes.forEach((el) => {
     }
   });
 });
+
+// Search products
+searchInput.addEventListener("input", () => {
+  let value = searchInput.value;
+  const products = JSON.parse(localStorage.getItem("products"));
+  productsHolder.innerHTML = "";
+  products.forEach((product) => {
+    if (product.title.includes(value)) {
+      productsHolder.innerHTML += `<div class="product-card">
+        <div class="product-img">
+          <img src="${product.image}" alt="Product 1" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">${product.title}</h3>
+          <p class="product-description">
+            ${product.description}
+          </p>
+          <p class="product-price">$${product.price}</p>
+        </div>
+        <div class="product-actions">
+          <a onclick="viewProduct(${product.id})" class="btn btn-primary">View</a>
+          <a onclick="AddProduct(${product.id})" class="btn btn-secondary">Add to cart</a>
+        </div>
+      </div>`;
+    }
+  });
+});
+
+function toggleProductsList() {
+  document.querySelector(".list_btn").addEventListener("click", () => {
+    productsHolder.classList.remove("product-grid");
+    document.querySelectorAll(".product-img").forEach((el) => {
+      el.classList.add("product-list");
+    });
+    document.querySelectorAll("#productsHolder > div").forEach((el) => {
+      el.classList.add("products-margin");
+    });
+  });
+
+  document.querySelector(".grid_btn").addEventListener("click", () => {
+    document.querySelectorAll(".product-img").forEach((el) => {
+      el.classList.remove("product-list");
+    });
+    productsHolder.classList.add("product-grid");
+    document.querySelectorAll("#productsHolder > div").forEach((el) => {
+      el.classList.remove("products-margin");
+    });
+  });
+}
+toggleProductsList();
+

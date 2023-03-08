@@ -5,7 +5,6 @@ let Price = document.querySelectorAll(".price");
 const cancel = document.querySelectorAll(".cancel");
 const listProduct = document.querySelectorAll(".list-product");
 
-
 // loop on btn plus
 btnPlus.forEach((ele, index) => {
   let priceNumber = parseInt(Price[index].textContent);
@@ -21,16 +20,15 @@ btnPlus.forEach((ele, index) => {
     // localStorage.setItem("totalPrice", total);
   });
 
-
   // loop on btn minus
   btnMinus[index].addEventListener("click", (e) => {
     if (counter > 0) {
       counter--;
       count[index].textContent = counter;
       let total = counter * priceNumber;
-    //   // add total price to subtotal
+      //   // add total price to subtotal
       Price[index].textContent = total;
-    //   //   localStorage.setItem("totalPrice", total);
+      //   //   localStorage.setItem("totalPrice", total);
     }
   });
 });
@@ -85,4 +83,4 @@ const renderCart = () => {
   localStorage.setItem("cartItems", JSON.stringify(data));
 };
 
-renderCart();
+// renderCart();

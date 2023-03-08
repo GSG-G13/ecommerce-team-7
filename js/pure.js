@@ -9,16 +9,47 @@ const removeCartItem = (cart, id) => {
 };
 // i know its duplicated , DRY principle is not applied here
 const deleteProduct = (product, id) => {
-  
-const tempProd = [...product];
+  const tempProd = [...product];
   let idx = tempProd.findIndex((e) => {
     if (e.id == id) return true;
   });
-  if (idx == -1) return ;
+  if (idx == -1) return;
   tempProd.splice(idx, 1);
   return tempProd;
 };
 
-module.exports = { removeCartItem, deleteProduct};
+// let countElement = document.querySelector(".fa-shopping-cart");
+
+function AddProduct(id) {
+  let myProducts = JSON.parse(localStorage.getItem("products"));
+  let myCartProducts = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  myProducts.forEach((el) => {
+    if (el.id == id) {
+      myCartProducts.push({
+        id: id,
+        title: el.title,
+        price: el.price,
+        image: `${el.image}`,
+        description: `${el.description}`,
+        category: `${el.category}`,
+      });
+    }
+  });
+  localStorage.setItem("cartItems", JSON.stringify(myCartProducts));
+  // const style = document.createElement("style");
+  // style.innerHTML = "nav a i::after {content: "`${myCartProducts.length}`"};";
+  // document.head.appendChild(style);
+}
+
+// AddProduct(8);
+
+function viewProduct(id) {
+  const url = `productDetails.html?id=${id}`;
+  window.location.href = url;
+  console.log("kmgfm");
+}
+
+module.exports = { removeCartItem, deleteProduct };
 
 module.exports = { removeCartItem };

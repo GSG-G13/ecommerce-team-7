@@ -262,6 +262,7 @@ nav {
   border: none;
   outline: none;
   flex: 1;
+  background-color: transparent;
 }
 
 .search-bar button {
@@ -290,12 +291,21 @@ nav {
     width: 100%;
   }
 }
-/* */
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 30px;
   margin-top: 50px;
+}
+
+.products-margin {
+  margin-bottom: 20px;
+}
+
+.product-list {
+  float: left;
+  margin-right: 20px;
 }
 
 .product-card {
@@ -366,15 +376,12 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-
-  .product-actions a:hover {
+.product-actions a:hover {
   background-color: #000;
   color: #fff;
-  }
+}
 
-
-a
-{
+a {
   text-decoration: none;
 }
 
@@ -382,7 +389,7 @@ nav a i {
   position: relative;
 }
 nav a i::after {
-  content: "0";
+  content: "";
   position: absolute;
   top: -0.85rem;
   right: -0.85rem;

@@ -12,6 +12,7 @@
     />
   </head>
   <body>
+    <script src="js/products.js"></script>
     <nav>
       <div class="logo">
         <a href="buyer.html">Buyer</a>
@@ -47,10 +48,10 @@
         <h1 class="section-title">Our Products</h1>
         <div class="filter-bar">
           <div class="view-toggle">
-            <button class="btn active" id="list-view-btn">
+            <button class="list_btn btn" id="list-view-btn">
               <i class="fas fa-th-list"></i> List View
             </button>
-            <button class="btn" id="grid-view-btn">
+            <button class="grid_btn btn" id="grid-view-btn">
               <i class="fas fa-th-large"></i> Grid View
             </button>
           </div>
@@ -60,14 +61,13 @@
             <button type="submit"><i class="fas fa-search"></i></button>
           </div>
         </div>
-        <div class="product-grid"></div>
+        <div id="productsHolder" class="product-grid"></div>
       </div>
     </section>
 
     <!-- end Our Proucts -->
     <script src="js/dom.js"></script>
     <script src="js/pure.js"></script>
-    <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
   </body>
 </html>
