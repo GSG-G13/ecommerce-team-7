@@ -275,7 +275,7 @@ nav {
 /* popub styles */
 .add-popup {
   width: 50%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   text-align: center;
