@@ -20,3 +20,5 @@ const tempProd = [...product];
 };
 
 module.exports = { removeCartItem, deleteProduct};
+
+module.exports = { removeCartItem };

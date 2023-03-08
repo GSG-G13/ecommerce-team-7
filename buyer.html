@@ -19,8 +19,6 @@
       <ul class="nav-links">
         <li><a href="buyer.html">Home</a></li>
         <li><a href="#products">Products</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
       </ul>
       <div class="burger">
         <div class="line1"></div>
@@ -36,7 +34,9 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Welcome to our shop!</h1>
-        <button class="shop-now"  id ="shop-btn">Shop Now</button>
+        <a href="#products">
+          <button class="shop-now" id="shop-btn">Shop Now</button>
+        </a>
       </div>
     </section>
     <!-- end hero section -->
@@ -54,110 +54,20 @@
               <i class="fas fa-th-large"></i> Grid View
             </button>
           </div>
-          <div class="category-bar">
-            <button class="btn active">All</button>
-            <button class="btn">Category 1</button>
-            <button class="btn">Category 2</button>
-            <button class="btn">Category 3</button>
-          </div>
+          <div class="category-bar"></div>
           <div class="search-bar">
             <input type="text" placeholder="Search products..." />
             <button type="submit"><i class="fas fa-search"></i></button>
           </div>
         </div>
-        <div class="product-grid">
-          <div class="product-card">
-            <div class="product-img">
-              <img src="https://via.placeholder.com/300x300" alt="Product 1" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Product 1</h3>
-              <p class="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="product-price">$9.99</p>
-            </div>
-            <div class="product-actions">
-              <a href="#" class="btn btn-primary">View</a>
-              <a href="#" class="btn btn-secondary">Add to cart</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-img">
-              <img src="https://via.placeholder.com/300x300" alt="Product 2" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Product 2</h3>
-              <p class="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="product-price">$19.99</p>
-            </div>
-            <div class="product-actions">
-              <a href="#" class="btn btn-primary">View</a>
-              <a href="#" class="btn btn-secondary">Add to cart</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-img">
-              <img src="https://via.placeholder.com/300x300" alt="Product 2" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Product 2</h3>
-              <p class="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="product-price">$19.99</p>
-            </div>
-            <div class="product-actions">
-              <a href="#" class="btn btn-primary">View</a>
-              <a href="#" class="btn btn-secondary">Add to cart</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-img">
-              <img src="https://via.placeholder.com/300x300" alt="Product 2" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Product 2</h3>
-              <p class="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="product-price">$19.99</p>
-            </div>
-            <div class="product-actions">
-              <a href="#" class="btn btn-primary">View</a>
-              <a href="#" class="btn btn-secondary">Add to cart</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-img">
-              <img src="https://via.placeholder.com/300x300" alt="Product 2" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Product 2</h3>
-              <p class="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="product-price">$19.99</p>
-            </div>
-            <div class="product-actions">
-              <a href="#" class="btn btn-primary">View</a>
-              <a href="#" class="btn btn-secondary">Add to cart</a>
-            </div>
-          </div>
-          <!-- Add more product cards here -->
-        </div>
+        <div class="product-grid"></div>
       </div>
     </section>
 
     <!-- end Our Proucts -->
-    <script src="/js/dom.js"> </script>
-    <script src="/js/pure.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/pure.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>
