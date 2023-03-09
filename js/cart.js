@@ -1,3 +1,54 @@
+function getCrtItems() {
+  const arrayOfCartObjects = JSON.parse(
+    localStorage.getItem("cartItems") || "[]"
+  );
+  const table = document.querySelector(".card-shoping");
+  table.innerHTML = "";
+  let txt = "";
+  arrayOfCartObjects.forEach((item) => {
+    txt += `
+    <div class="cards">
+    <div class="flex-items">
+    
+  <div class="cards list-product">
+    <div class="flex-items">
+      <div class="card-image">
+        <img src="${item.image}" class="w-100" alt="" />
+        <div class="img-desc">
+          <h5>${item.title}</h5>
+          <p>${item.description}</p>
+        </div>
+      </div>
+      <!--  -->
+      <!-- <div class="mid-card"> -->
+
+      <!-- </div> -->
+      <!--  -->
+      <div class="detelis-card " >
+        <div class="cart-flex">
+          <div class="span-number">
+            <h5 class="h5 fixed_price">${item.price} </h5>
+            <p class="btn_plus">+</p>
+            <p class="count">1</p>
+            <p class="btn_minus">-</p>
+          </div>
+         
+          <h5 class="h5 price"> </h5> 
+           <span>$</span>
+          <i class="fas fa-trash-alt cancel" id="delIcon"></i>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+</div>
+      `;
+  });
+  table.innerHTML = txt;
+}
+
+getCrtItems();
+
 let btnPlus = document.querySelectorAll(".btn_plus");
 let btnMinus = document.querySelectorAll(".btn_minus");
 let count = document.querySelectorAll(".count");
@@ -6,15 +57,24 @@ let Price = document.querySelectorAll(".price");
 const cancel = document.querySelectorAll(".cancel");
 const listProduct = document.querySelectorAll(".list-product");
 const subtotal = document.querySelector(".total");
+// import { removeInCart } from "./pure.js";
 
-
+const removeCartItem = (cart, id) => {
+  return cart.filter((e, index) => index !== id);
+};
+function RemoveFromCart(id) {
+  let cart = JSON.parse(localStorage.getItem("cartItems") || "[]");
+  if (!confirm("Are You Sure To Delete This Item?")) return;
+  let removed = removeCartItem(cart, id);
+  if (!removed) return;
+  localStorage.setItem("cartItems", JSON.stringify(removed));
+}
 // loop on btn plus
 btnPlus.forEach((ele, index) => {
   let priceNumber = parseInt(fixedPrice[index].textContent);
   let counter = parseInt(count[index].textContent);
   // add total price to subtotal
-  subtotal.textContent = parseInt(subtotal.textContent)+counter*priceNumber;
-  
+  subtotal.textContent = parseInt(subtotal.textContent) + counter * priceNumber;
 
   ele.addEventListener("click", (e) => {
     counter++;
@@ -22,11 +82,11 @@ btnPlus.forEach((ele, index) => {
     let total = counter * priceNumber;
     // add total price to subtotal
     Price[index].textContent = total;
-    subtotal.textContent = parseInt(subtotal.textContent)+parseInt(fixedPrice[index].textContent);
+    subtotal.textContent =
+      parseInt(subtotal.textContent) + parseInt(fixedPrice[index].textContent);
     // let arr = JSON.stringify(total);
     // localStorage.setItem("totalPrice", total);
   });
-
 
   // loop on btn minus
   btnMinus[index].addEventListener("click", (e) => {
@@ -34,11 +94,11 @@ btnPlus.forEach((ele, index) => {
       counter--;
       count[index].textContent = counter;
       let total = counter * priceNumber;
-    //   // add total price to subtotal
+      //   // add total price to subtotal
       Price[index].textContent = total;
-      subtotal.textContent = parseInt(subtotal.textContent)-total;
+      subtotal.textContent = parseInt(subtotal.textContent) - total;
 
-    //   //   localStorage.setItem("totalPrice", total);
+      //   //   localStorage.setItem("totalPrice", total);
     }
   });
 });
@@ -48,13 +108,7 @@ btnPlus.forEach((ele, index) => {
 cancel.forEach((ele, index) => {
   ele.addEventListener("click", (e) => {
     listProduct[index].remove();
-
-    // localStorage.setItem("display", listProduct[index].style.display);
-
-    // if (localStorage.getItem("display")) {
-    //   console.log(localStorage.getItem("display"));
-    //   listProduct[index].style.display = localStorage.getItem("display");
-    // }
+    RemoveFromCart(index);
   });
 });
 const renderCart = () => {
