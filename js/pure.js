@@ -30,24 +30,30 @@ function AddProduct(id) {
         id: id,
         title: el.title,
         price: el.price,
-        image: `${el.image}`,
-        description: `${el.description}`,
-        category: `${el.category}`,
+        image: el.image,
+        description: el.description,
+        category: el.category,
       });
     }
   });
   localStorage.setItem("cartItems", JSON.stringify(myCartProducts));
-  // const style = document.createElement("style");
-  // style.innerHTML = "nav a i::after {content: "`${myCartProducts.length}`"};";
-  // document.head.appendChild(style);
+  let myCartProductss = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const style = document.createElement("style");
+  style.innerHTML = `nav a i::after {content: '${myCartProductss.length}'};`;
+  document.head.appendChild(style);
 }
+
+let myCartProductss = JSON.parse(localStorage.getItem("cartItems")) || [];
+const style = document.createElement("style");
+style.innerHTML = `nav a i::after {content: '${myCartProductss.length}'};`;
+document.head.appendChild(style);
 
 // AddProduct(8);
 
 function viewProduct(id) {
   const url = `productDetails.html?id=${id}`;
   window.location.href = url;
-  console.log("kmgfm");
+  // console.log("kmgfm");
 }
 
 module.exports = { removeCartItem, deleteProduct };

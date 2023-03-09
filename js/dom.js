@@ -162,4 +162,3 @@ function toggleProductsList() {
   });
 }
 toggleProductsList();
-
